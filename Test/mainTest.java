@@ -1,6 +1,9 @@
+import java.sql.Time;
+
 public class mainTest {
     public static void main(String[] args) {
-        DiagonalDifference diagonalDifference = new DiagonalDifference();
-        diagonalDifference.staircase(3);
+        TimeConversion timeConversion = new TimeConversion();
+
+        System.out.println(timeConversion.timeConversion("12:45:54PM"));
     }
 }
