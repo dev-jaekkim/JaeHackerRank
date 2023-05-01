@@ -10,39 +10,30 @@ public class GradingStudents {
      */
 
     public List<Integer> gradingStudents(List<Integer> grades) {
-        // Write your code here
-
-        // 4 73 67 38 33
 
         List<Integer> finalGrades = new ArrayList<>();
 
-        Integer student = grades.get(0);
+        Integer student = grades.size();
 
-        for(int i = 1 ; i <= student ; i++) {
+        for (int i = 0; i < student; i++) {
 
             Integer grade = grades.get(i);
-            //System.out.println("처음 들어가는 grade : "+ grade);
 
-            if (grade  < 40) {
-                finalGrades.add(40);
-                //System.out.println("40 보다 작아서 40");
+            int throughAwayGrade = grade % 5;
+
+            if (throughAwayGrade > 2) {
+
+                int calculatedGrade = ((grade / 5) + 1) * 5;
+
+                if(calculatedGrade < 40) {
+                    calculatedGrade = grade;
+                }
+
+                finalGrades.add(calculatedGrade);
 
             } else {
-
-                int throughAwayGrade = grade % 5;
-
-                if (throughAwayGrade > 2) {
-                   finalGrades.add((( grade / 5 ) + 1 ) * 5);
-                    //System.out.println(grade);
-
-                } else {
-                    finalGrades.add(grade);
-                    //System.out.println((( grade / 5 ) + 1 )* 5);
-
-                }
+                finalGrades.add(grade);
             }
-
-
         }
 
         return finalGrades;
