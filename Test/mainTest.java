@@ -1,9 +1,24 @@
-import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 
 public class mainTest {
     public static void main(String[] args) {
-        TimeConversion timeConversion = new TimeConversion();
 
-        System.out.println(timeConversion.timeConversion("12:45:54PM"));
+        GradingStudents gradingStudents = new GradingStudents();
+
+        List<Integer> grades = new ArrayList<>();
+
+        grades.add(4);
+        grades.add(73);
+        grades.add(67);
+        grades.add(38);
+        grades.add(33);
+
+        List<Integer> finalGrades = gradingStudents.gradingStudents(grades);
+
+        for(Integer g : finalGrades) {
+            System.out.println(g);
+        }
+
     }
 }
