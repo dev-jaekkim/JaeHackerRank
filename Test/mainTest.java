@@ -4,21 +4,20 @@ import java.util.List;
 public class mainTest {
     public static void main(String[] args) {
 
-        GradingStudents gradingStudents = new GradingStudents();
+        PlusMinus plusMinus = new PlusMinus();
 
-        List<Integer> grades = new ArrayList<>();
+        List<Integer> arrList = new ArrayList<>();
 
-        grades.add(4);
-        grades.add(73);
-        grades.add(67);
-        grades.add(38);
-        grades.add(33);
+        //-4 3 -9 0 4 1
+        arrList.add(-4);
+        arrList.add(3);
+        arrList.add(-9);
+        arrList.add(0);
+        arrList.add(4);
+        arrList.add(1);
 
-        List<Integer> finalGrades = gradingStudents.gradingStudents(grades);
 
-        for(Integer g : finalGrades) {
-            System.out.println(g);
-        }
+        plusMinus.solution(arrList);
 
     }
 }
